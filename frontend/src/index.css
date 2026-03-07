@@ -1,0 +1,239 @@
+/* ── Reset & base ───────────────────────────── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Inter", system-ui, -apple-system, sans-serif;
+  background: #f5f6fa;
+  color: #2d3436;
+  line-height: 1.5;
+}
+
+/* ── Layout ────────────────────────────────── */
+.app {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 24px 16px 64px;
+}
+
+.app-title {
+  text-align: center;
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.app-subtitle {
+  text-align: center;
+  color: #636e72;
+  margin-bottom: 32px;
+}
+
+/* ── Product Grid ──────────────────────────── */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.product-card {
+  background: #fff;
+  border-radius: 14px;
+  padding: 20px 16px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+
+.product-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+}
+
+.product-dot {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  margin: 0 auto 12px;
+}
+
+.product-name {
+  font-weight: 600;
+  font-size: 1rem;
+  margin-bottom: 4px;
+}
+
+.product-price {
+  color: #636e72;
+  font-size: 0.9rem;
+  margin-bottom: 14px;
+}
+
+/* Quantity controls */
+.qty-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.qty-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  border: 1.5px solid #dfe6e9;
+  background: #fff;
+  cursor: pointer;
+  font-size: 1.1rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #2d3436;
+  transition: background 0.15s, border-color 0.15s;
+}
+
+.qty-btn:hover {
+  background: #dfe6e9;
+}
+
+.qty-btn:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.qty-value {
+  font-size: 1.1rem;
+  font-weight: 600;
+  min-width: 28px;
+  text-align: center;
+}
+
+/* ── Member Card ───────────────────────────── */
+.member-section {
+  background: #fff;
+  border-radius: 14px;
+  padding: 20px 24px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.member-section label {
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.member-input {
+  flex: 1;
+  min-width: 200px;
+  padding: 10px 14px;
+  border: 1.5px solid #dfe6e9;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.member-input:focus {
+  border-color: #6c5ce7;
+}
+
+/* ── Calculate Button ──────────────────────── */
+.calc-btn {
+  display: block;
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #6c5ce7, #a29bfe);
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s;
+  margin-bottom: 24px;
+}
+
+.calc-btn:hover {
+  opacity: 0.9;
+}
+
+.calc-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* ── Order Summary ─────────────────────────── */
+.summary {
+  background: #fff;
+  border-radius: 14px;
+  padding: 24px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.summary h2 {
+  font-size: 1.25rem;
+  margin-bottom: 16px;
+}
+
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  font-size: 0.95rem;
+}
+
+.summary-row.discount {
+  color: #d63031;
+}
+
+.summary-divider {
+  border: none;
+  border-top: 1.5px dashed #dfe6e9;
+  margin: 8px 0;
+}
+
+.summary-row.total {
+  font-weight: 700;
+  font-size: 1.15rem;
+  padding-top: 12px;
+}
+
+.summary-items {
+  margin-bottom: 12px;
+}
+
+.summary-items .item-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.88rem;
+  color: #636e72;
+  padding: 3px 0;
+}
+
+.summary-items .item-discount {
+  color: #d63031;
+  font-size: 0.82rem;
+  text-align: right;
+}
+
+/* ── Error ─────────────────────────────────── */
+.error-banner {
+  background: #ffeaa7;
+  color: #d63031;
+  padding: 12px 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  font-weight: 500;
+  text-align: center;
+}

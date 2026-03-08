@@ -1,5 +1,3 @@
-import React from "react";
-
 /**
  * Displays the calculation breakdown after hitting "Calculate".
  */

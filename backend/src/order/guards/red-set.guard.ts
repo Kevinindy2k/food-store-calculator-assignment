@@ -8,10 +8,6 @@ import {
 
 const ONE_HOUR_MS = 60 * 60 * 1000;
 
-/**
- * Guard that enforces the Red set ordering restriction:
- * only one customer can order a Red set within a 1-hour window.
- */
 @Injectable()
 export class RedSetGuard implements CanActivate {
   private lastRedSetOrderTime: number | null = null;
@@ -45,7 +41,7 @@ export class RedSetGuard implements CanActivate {
     return true;
   }
 
-  /** Reset the limiter (useful for testing). */
+  /** เอาไว้ reset ตัว limiter (ใช้สำหรับการทดสอบ) */
   reset(): void {
     this.lastRedSetOrderTime = null;
   }

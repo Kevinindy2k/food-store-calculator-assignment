@@ -1,5 +1,3 @@
-import React from "react";
-
 /**
  * Renders a single product card with quantity +/- controls.
  */

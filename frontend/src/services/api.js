@@ -26,7 +26,7 @@ export async function calculateOrder(items, memberCard) {
   const data = await res.json();
 
   if (!res.ok) {
-    throw new Error(data.error || "Calculation failed");
+    throw new Error(data.message || "Calculation failed");
   }
 
   return data;

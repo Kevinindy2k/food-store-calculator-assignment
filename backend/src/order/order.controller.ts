@@ -1,5 +1,6 @@
 import { Controller, Post, Body, UseGuards } from '@nestjs/common';
-import { OrderService, OrderResult } from './order.service';
+import { OrderService } from './order.service';
+import type { OrderResult } from './order.service';
 import { CalculateOrderDto } from './dto/calculate-order.dto';
 import { RedSetGuard } from './guards/red-set.guard';
 
